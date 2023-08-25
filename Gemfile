@@ -21,6 +21,7 @@ gem 'sqlite3'                   , '2.7.3'
 gem 'stimulus-rails'            , '1.2.1'
 gem 'turbo-rails'               , '1.4.0'
 gem 'will_paginate'             , '3.3.1'
+gem "config"                    , "4.2.1"
 
 group :development, :test do
   gem 'debug',  '1.7.1', platforms: %i[mri mingw x64_mingw]
