@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.10'
+ruby '3.4.10'
 
 gem 'active_storage_validations', '0.9.8'
 gem 'bcrypt'                    , '3.1.18'
@@ -41,6 +41,7 @@ group :test do
   gem 'guard-minitest',           '2.4.6'
   gem 'minitest',                 '5.18.0'
   gem 'minitest-reporters',       '1.6.0'
+  gem 'mutex_m'
   gem 'rails-controller-testing', '1.0.5'
   gem 'selenium-webdriver',       '4.8.3'
   gem 'webdrivers',               '5.2.0'
