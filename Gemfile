@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.4.10'
+ruby '4.0.6'
 
 gem 'active_storage_validations', '0.9.8'
 gem 'bcrypt'                    , '3.1.18'
@@ -14,7 +14,7 @@ gem 'image_processing'          , '1.12.2'
 gem 'importmap-rails'           , '1.1.5'
 gem 'jbuilder'                  , '2.14.1'
 gem 'puma'                      , '6.6.1'
-gem 'rails'                     , '8.0.2.1'
+gem 'rails'                     , '8.0.5'
 gem 'sassc-rails'               , '2.1.2'
 gem 'sprockets-rails'           , '3.4.2'
 gem 'sqlite3'                   , '2.7.3'
@@ -39,7 +39,7 @@ group :test do
   gem 'capybara',                 '3.38.0'
   gem 'guard',                    '2.18.0'
   gem 'guard-minitest',           '2.4.6'
-  gem 'minitest',                 '5.18.0'
+  gem 'minitest',                 '6.0.6'
   gem 'minitest-reporters',       '1.6.0'
   gem 'mutex_m'
   gem 'rails-controller-testing', '1.0.5'
@@ -48,7 +48,7 @@ group :test do
 end
 
 group :production do
-  gem 'mailgun-ruby', "1.3.10"
+  gem 'mailgun-ruby', "1.4.4"
 end
 
 # Windows ではタイムゾーン情報用の tzinfo-data gem を含める必要があります
