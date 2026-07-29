@@ -502,7 +502,7 @@ DEPENDENCIES
   will_paginate (= 3.3.1)
 
 RUBY VERSION
-  ruby 4.0.6p0
+  ruby 4.0.5p0
 
 BUNDLED WITH
   4.0.16

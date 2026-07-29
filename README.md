@@ -27,7 +27,7 @@ $ sudo apt install sqlite3 libsqlite3-dev
 
 ```
 $ gem install bundler -v 4.0.16
-$ bundle install --without production
+$ bundle install
 ```
 
 手順：
