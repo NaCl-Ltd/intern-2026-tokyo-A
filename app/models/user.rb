@@ -18,6 +18,11 @@ class User < ApplicationRecord
                     uniqueness: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validates :web_site_url, length: { maximum: 255 }, allow_blank: true,
+                           format: {
+                             with: URI::DEFAULT_PARSER.make_regexp(%w[http https]),
+                             message: "must be a valid URL"
+                           }
 
   # 渡された文字列のハッシュ値を返す
   def User.digest(string)
