@@ -1,6 +1,13 @@
 <% provide(:title, '全ユーザー') %>
 <h1>全ユーザー</h1>
 
+<section class="users-search">
+  <%= form_with url: users_path, method: :get, local: true, html: { class: "users-search-form" } do |f| %>
+    <%= f.text_field :keyword, class: "search-input form-control" %>
+    <%= f.submit '検索', class: "search-button btn btn-primary" %>
+  <% end %>
+</section>
+
 <%= will_paginate %>
 
 <ul class="users">
