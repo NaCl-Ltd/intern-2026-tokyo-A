@@ -83,6 +83,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_02_012323) do
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.datetime "updated_at", null: false
+    t.string "web_site_url"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
