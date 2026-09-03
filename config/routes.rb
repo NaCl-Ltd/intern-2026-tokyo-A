@@ -11,11 +11,13 @@ Rails.application.routes.draw do
     member do
       get :following
       get :followers
+      get :bookmarks
     end
   end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
+  resources :bookmarks,           only: [:create, :destroy]
   get "/microposts", to: "static_pages#home"
 end

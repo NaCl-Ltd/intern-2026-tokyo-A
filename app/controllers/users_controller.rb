@@ -60,6 +60,14 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
+  def bookmarks
+    @title     = "Bookmarks"
+    @user      = User.find(params[:id])
+    @bookmarks = @user.bookmarked_microposts.paginate(page: params[:page])
+    # TODO: Make views/users/show_bookmark.erb
+    # render 'show_bookmark'
+  end
+
   private
 
     def user_params

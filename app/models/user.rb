@@ -109,6 +109,18 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  def bookmark(micropost)
+    bookmarked_microposts << micropost
+  end
+
+  def unbookmark(micropost)
+    bookmarked_microposts.delete(micropost)
+  end
+
+  def bookmarking?(micropost)
+    bookmarked_microposts.include?(micropost)
+  end
+
   private
 
     # メールアドレスをすべて小文字にする
