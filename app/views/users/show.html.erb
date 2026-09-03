@@ -28,12 +28,14 @@
     <hr>
 
     <%= render 'follow_form' if logged_in? %>
-    <% if @user.microposts.any? %>
+    <% if @microposts.any? %>
       <h3>ポスト (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
         <%= render @microposts %>
       </ol>
       <%= will_paginate @microposts %>
+    <% elsif params[:search].present? %>
+      <p>「<%= params[:search] %>」に一致するポストがありません。</p>
     <% end %>
   </div>
 </div>
