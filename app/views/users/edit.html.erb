@@ -18,6 +18,10 @@
       <%= f.label :password_confirmation, "パスワード(確認用)" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
+
+      <%= f.label :description, "自己紹介文" %>
+      <%= f.text_area :description, class: 'form-control' %>
+
       <%= f.label :web_site_url, "URL*" %>
       <%= f.url_field :web_site_url, class: 'form-control' %>
 
