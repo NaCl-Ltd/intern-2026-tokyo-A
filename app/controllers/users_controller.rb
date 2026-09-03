@@ -5,11 +5,11 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def index
-    keyword = params[:keyword]
-    if keyword.present?
+    @keyword = params[:keyword]
+    if @keyword.present?
       @users = User.where(
                            "LOWER(name) LIKE :keyword OR LOWER(email) LIKE :keyword", 
-                           keyword: "%#{keyword.downcase}%"
+                           keyword: "%#{@keyword.downcase}%"
                          )
                    .paginate(page: params[:page])
     else

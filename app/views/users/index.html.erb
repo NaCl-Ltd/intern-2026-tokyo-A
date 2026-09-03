@@ -8,10 +8,16 @@
   <% end %>
 </section>
 
-<%= will_paginate %>
+<% if @users.present? %>
+  <%= will_paginate %>
 
-<ul class="users">
-  <%= render @users %>
-</ul>
+  <ul class="users">
+    <%= render @users %>
+  </ul>
 
-<%= will_paginate %>
+  <%= will_paginate %>
+<% else %>
+  <p>
+    "<%= @keyword %>" に一致するユーザーは見つかりませんでした.
+  </p>
+<% end %>
