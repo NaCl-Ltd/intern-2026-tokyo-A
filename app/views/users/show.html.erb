@@ -33,7 +33,7 @@
         <%= render @microposts %>
       </ol>
       <%= will_paginate @microposts %>
-    <% elsif params[:search].present? %>
+    <% else params[:search].present? %>
       <p>「<%= params[:search] %>」に一致するポストがありません。</p>
     <% end %>
   </div>
