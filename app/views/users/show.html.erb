@@ -16,13 +16,29 @@
     </section>
   </aside>
   <div class="col-md-8">
+
+  <!-- 検索フォーム -->
+  <%= form_with url: user_path(@user), method: :get, local: true do |f| %>
+    <div class="search-form">
+      <%= f.label :search, "キーワード検索" %>
+      <div class="search-form-inner">
+        <%= f.text_field :search,
+          class: 'form-control',
+          placeholder: 'キーワードを入力してください' %>
+        <%= f.submit "検索", class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+
     <%= render 'follow_form' if logged_in? %>
-    <% if @user.microposts.any? %>
+    <% if @microposts.any? %>
       <h3>ポスト (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
         <%= render @microposts %>
       </ol>
       <%= will_paginate @microposts %>
+    <% else params[:search].present? %>
+      <p>「<%= params[:search] %>」に一致するポストがありません。</p>
     <% end %>
   </div>
 </div>

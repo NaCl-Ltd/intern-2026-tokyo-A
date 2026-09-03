@@ -330,3 +330,26 @@ span.image {
     border: 0;
   }
 }
+
+.search-form {
+  margin-top: 20px;
+}
+
+.search-form-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-form-inner input[type="text"] {
+  width: auto;
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.search-form-inner input[type="submit"] {
+  width: auto;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+

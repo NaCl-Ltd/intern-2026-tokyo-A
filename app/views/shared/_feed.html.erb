@@ -4,4 +4,6 @@
   </ol>
   <%= will_paginate @feed_items,
                     params: { controller: :static_pages, action: :home } %>
+<% elsif params[:search].present? %>
+  <p>「<%= params[:search] %>」に一致するポストはありません。</p>
 <% end %>
