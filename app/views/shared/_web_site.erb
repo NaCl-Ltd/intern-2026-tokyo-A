@@ -1,0 +1,9 @@
+<% @user ||= current_user %>
+<% if @user.web_site_url.present? %>
+  <div class="web_site">
+    Web:
+    <a href="<%= @user.web_site_url %>">
+      <%= @user.web_site_url %>
+    </a>
+  </div>
+<% end %>
