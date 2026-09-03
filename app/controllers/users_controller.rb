@@ -6,15 +6,7 @@ class UsersController < ApplicationController
 
   def index
     @keyword = params[:keyword]
-    if @keyword.present?
-      @users = User.where(
-                           "LOWER(name) LIKE :keyword OR LOWER(email) LIKE :keyword", 
-                           keyword: "%#{@keyword.downcase}%"
-                         )
-                   .paginate(page: params[:page])
-    else
-      @users = User.paginate(page: params[:page])
-    end
+    @users = User.search(@keyword).paginate(page: params[:page])
   end
 
   def show
