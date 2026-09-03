@@ -13,8 +13,8 @@ class UsersController < ApplicationController
 
     if params[:search].present?
     @microposts = @user.microposts
-                        .where("content LIKE ?", "%#{params[:search]}%")
-                        .paginate(page: params[:page])
+                         .where("content LIKE ?", "%#{params[:search]}%")
+                         .paginate(page: params[:page])
     else
       @microposts = @user.microposts.paginate(page: params[:page])
     end
