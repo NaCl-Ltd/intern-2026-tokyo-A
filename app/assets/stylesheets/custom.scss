@@ -330,3 +330,13 @@ span.image {
     border: 0;
   }
 }
+
+.users-search-form {
+  display: flex;
+  gap: 8px;
+  align-items: start;
+
+  .search-button {
+    width: 6rem;
+  }
+}

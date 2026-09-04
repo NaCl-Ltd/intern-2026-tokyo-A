@@ -1,10 +1,26 @@
 <% provide(:title, '全ユーザー') %>
 <h1>全ユーザー</h1>
 
-<%= will_paginate %>
+<section class="users-search">
+  <%= form_with url: users_path, method: :get, local: true,
+                html: { class: "users-search-form" } do |f| %>
+    <%= f.text_field :keyword, class: "search-input form-control",
+                               value: @keyword,
+                               placeholder: "ユーザーを検索..." %>
+    <%= f.submit '検索', class: "search-button btn btn-primary" %>
+  <% end %>
+</section>
 
-<ul class="users">
-  <%= render @users %>
-</ul>
+<% if @users.present? %>
+  <%= will_paginate %>
 
-<%= will_paginate %>
+  <ul class="users">
+    <%= render @users %>
+  </ul>
+
+  <%= will_paginate %>
+<% else %>
+  <p>
+    "<%= @keyword %>" に一致するユーザーは見つかりませんでした.
+  </p>
+<% end %>

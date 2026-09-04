@@ -112,6 +112,13 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  def self.search(keyword)
+    return all if keyword.blank?
+
+    escaped_keyword = sanitize_sql_like(keyword.downcase)
+    where("LOWER(name) LIKE :keyword OR LOWER(email) LIKE :keyword", keyword: "%#{escaped_keyword}%")
+  end
+
   private
 
     # メールアドレスをすべて小文字にする
